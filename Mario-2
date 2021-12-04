@@ -1,0 +1,33 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int Height;
+        do {
+            System.out.print("Height:");
+            Height = input.nextInt();
+        }
+        while (Height < 1 || Height > 8);
+        hash(Height);
+        System.out.println("Height = " + Height);
+    }
+    static void hash(int Height) {
+        for (int i = 0; i < Height; i++) {
+            for (int row = 0; row < Height - i - 1; row++) {
+                System.out.print(" ");
+            }
+            for (int columns = 0; columns <= i; columns++) {
+                System.out.print("#");
+            }
+            System.out.print("  ");
+            for (int a = 0; a <= i; a++) {
+                System.out.print("#");
+            }
+            System.out.print("\n");
+        }
+    }
+}
